@@ -1,0 +1,29 @@
+int main()
+{
+    char c[201];
+    int n=0,i,l;
+    while(n<100)
+    {
+        gets(c);
+        l=strlen(c);
+        if(strcmp(c,"START")==0)
+            continue;
+        else if(strcmp(c,"END")==0)
+            continue;
+        else if(strcmp(c,"ENDOFINPUT")==0)
+            break;
+        else
+        {
+            for(i=0;i<l;i++)
+            {
+                if(c[i]>='F'&&c[i]<='Z')
+                    c[i]=c[i]-5;
+                else if(c[i]>='A'&&c[i]<'F')
+                    c[i]=c[i]+21;
+            }
+            puts(c);
+        }
+        n++;
+    }
+    return 0;
+}
